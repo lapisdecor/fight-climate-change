@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,64,27)
+  Icon = Picture["icon:/32/internet"]
   { Label1 Label
     MoveScaled(10,5,46,4)
     Text = ("Welcome! To fight climate change click this button.")
