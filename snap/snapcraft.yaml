@@ -1,0 +1,16 @@
+
+  name: fight-climate-change
+  version: 'master'
+  summary: Proof of concept of a gambas project turned into a snap (also, helps fighting climate change)
+  description: |
+    This snap helps you fight climate change. Run it and save the planet.
+    It also gives proof of concept that gambas projects can be packaged as snaps.
+
+  grade: devel # must be 'stable' to release into candidate/stable channels
+  confinement: devmode # use 'strict' once you have the right plugs and slots
+
+  parts:
+    my-part:
+      # See 'snapcraft plugins'
+      plugin: nil
+  
