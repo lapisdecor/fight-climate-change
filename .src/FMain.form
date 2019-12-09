@@ -1,0 +1,13 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,27)
+  { Label1 Label
+    MoveScaled(10,5,46,4)
+    Text = ("Welcome! To fight climate change click this button.")
+  }
+  { Button1 Button
+    MoveScaled(24,14,16,4)
+    Text = ("Click Me!")
+  }
+}

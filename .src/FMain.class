@@ -1,0 +1,16 @@
+' Gambas class file
+
+Public count As Integer = 0
+
+
+Public Sub Button1_Click()
+  If count = 0 Then
+    Application.MainWindow = Me
+    Shell "sensible-browser https://www.climatestrike.net/get-involved/"
+    Button1.Text = "Thank you!"
+    count += 1
+  Else
+    Me.Close()
+  Endif
+  
+End

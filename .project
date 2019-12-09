@@ -1,0 +1,23 @@
+# Gambas Project File 3.0
+Title=Fight Climate Change
+Startup=FMain
+Version=0.0.3
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Description="A little app made in gambas that helps you fight clima change."
+Authors="Luís Louro"
+TabSize=2
+Language=en_US
+Maintainer=Luis Louro
+Address=lapisdecor@gmail.com
+Url=http://lapisdecor.github.io
+License=General Public License
+PackageName=fight-clima-change-0.0.1
+CreateEachDirectory=1
+Packager=1
+Systems=ubuntu
+Menus=ubuntu:"Applications/Science/Geoscience"
+Categories=ubuntu:"Geoscience;Science"
+Groups=ubuntu:"misc"
+ExtraDependencies=ubuntu:"gambas3-gb-form\t\t\ngambas3-gb-gui\t\t\ngambas3-gb-image\t\t"
