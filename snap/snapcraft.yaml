@@ -33,7 +33,7 @@
       plugin: nil
       source: https://github.com/lapisdecor/fight-climate-change.git
       override-pull: |
-        snapcraft pull
+        snapcraftctl pull
         gbc3	
       stage-packages:
       - gambas3-gb-form
