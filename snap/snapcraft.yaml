@@ -1,49 +1,43 @@
-
-  name: fight-climate-change
-  version: 'master'
-  summary: Proof of concept of a gambas project turned into a snap.
-  description: |
+name: fight-climate-change
+version: 'master'
+summary: Proof of concept of a gambas project turned into a snap.
+description: |
     This snap helps you fight climate change. Run it and save the planet.
     It also gives proof of concept that gambas projects can be packaged as snaps.
 
-  grade: devel # must be 'stable' to release into candidate/stable channels
-  confinement: devmode # use 'strict' once you have the right plugs and slots
-  base: core18
-  #icon: .icon.png
-  license: GPL-3.0
-  architectures:
-    - build-on: amd64
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+base: core18
+#icon: .icon.png
+license: GPL-3.0
+architectures:
+  - build-on: amd64
 
-  parts:
-    prepare:
-      plugin: nil
-      build-packages:
-        - software-properties-common
-        - dirmngr
-  
-    add-ppa:
-      plugin: nil
-      override-pull: |
-        add-apt-repository -y  ppa:gambas-team/gambas3
-        apt update
-        #apt upgrade -yy
-      
-
-    fight-climate-change:
-      plugin: nil
-      source: https://github.com/lapisdecor/fight-climate-change.git
-      override-pull: |
-        snapcraftctl pull
-        gbc3	
-      stage-packages:
-      - gambas3-gb-form
-      - gambas3-gb-image
-      - gambas3-runtime
-      - gambas3-dev
-      after: [add-ppa]
-    
-
-  apps:
-    fight-climate-change:
-      command: gbx3 .
-  
+parts:
+  prepare:
+    plugin: nil
+    build-packages:
+      - software-properties-common
+      - dirmngr
+  add-ppa:
+    plugin: nil
+    override-pull: |
+      add-apt-repository -y  ppa:gambas-team/gambas3
+      apt update
+    after: [prepare]
+  fight-climate-change:
+    plugin: nil
+    source: .
+    override-build: |
+      snapcraftctl build
+      /usr/bin/gbc3 $SNAPCRAFT_PART_SRC
+    build-packages:
+    - gambas3-gb-form
+    - gambas3-gb-image
+    - gambas3-runtime
+    - gambas3-dev
+    - gambas3-ide
+    after: [add-ppa]
+apps:
+  fight-climate-change:
+    command: gbx3 .
