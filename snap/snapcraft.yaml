@@ -30,13 +30,13 @@ parts:
     source: .
     override-build: |
       snapcraftctl build
-      /usr/bin/gbc3 $SNAPCRAFT_PART_SRC
-    build-packages:
+      "${SNAPCRAFT_PART_INSTALL}"/usr/bin/gbc3 -r "${SNAPCRAFT_PART_INSTALL}"/usr $SNAPCRAFT_PART_SRC
+    stage-packages:
     - gambas3-gb-form
     - gambas3-gb-image
     - gambas3-runtime
     - gambas3-dev
-    - gambas3-ide
+    #- gambas3-ide
     after: [add-ppa]
 apps:
   fight-climate-change:
