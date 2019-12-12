@@ -26,7 +26,7 @@ parts:
       apt update
     after: [prepare]
   fight-climate-change:
-    plugin: nil
+    plugin: dump
     source: .
     override-build: |
       snapcraftctl build
@@ -40,4 +40,4 @@ parts:
     after: [add-ppa]
 apps:
   fight-climate-change:
-    command: gbx3 .
+    command: gbx3 $SNAP
